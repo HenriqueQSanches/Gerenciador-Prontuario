@@ -7,9 +7,8 @@ import {
   Title,
   Container,
   NavGroup
-} from '../styles/components/Index.styles';
-
-function Index() {
+} from './Home.styles';
+function Home() { 
   return (
     <Container>
       <NavContainer>
@@ -26,19 +25,18 @@ function Index() {
             </NavItem>
           </NavGroup>
           <NavGroup>
-            <NavItem>
+            {/* <NavItem>
               <Link to="/login">Login</Link>
-            </NavItem>
+            </NavItem> */}
           </NavGroup>
         </NavList>
       </NavContainer>
       
       <MainContent>
-        <Title>LumenPsi - Iluminando os Caminhos da sua Mente</Title>
-        <h2>Gerenciador Inteligente de Prontuários</h2>
+        <Title>Gerenciador Inteligente de Prontuários</Title>
       </MainContent>
     </Container>
   );
 }
 
-export default Index;
+export default Home;

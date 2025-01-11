@@ -1,0 +1,1 @@
+Estrutura de pastas responsável pelas páginas e estilos.

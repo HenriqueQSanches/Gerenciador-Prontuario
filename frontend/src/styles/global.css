@@ -2,25 +2,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
 }
 
 body {
-  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   background-color: #f8f9fa;
-  color: #333;
-  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-:root {
-  --primary: rgb(0, 87, 109);
-  --secondary: rgb(38, 110, 110);
-  --white: #ffffff;
-  --light-bg: #f8f9fa;
+button, input {
+  outline: none;
 }
 
-::selection {
-  background-color: rgba(0, 87, 109, 0.2);
-  color: rgb(0, 87, 109);
+a {
+  text-decoration: none;
 }
