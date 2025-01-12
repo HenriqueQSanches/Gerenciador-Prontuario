@@ -8,6 +8,11 @@ export const MainContent = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    min-height: 85vh;
+  }
 `;
 
 export const Title = styled.h1`
@@ -29,6 +34,15 @@ export const Title = styled.h1`
     background: linear-gradient(90deg, rgb(0, 87, 109), rgb(38, 110, 110));
     border-radius: 2px;
   }
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+    padding-bottom: 0.8rem;
+    
+    &::after {
+      width: 80px;
+    }
+  }
 `;
 
 export const Subtitle = styled.h2`
@@ -41,6 +55,13 @@ export const Subtitle = styled.h2`
   margin-top: 1rem;
   padding: 0 1rem;
   letter-spacing: 0.3px;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+    padding: 0;
+    text-align: left;
+    line-height: 1.6;
+  }
 `;
 
 export const Container = styled.div`
@@ -63,5 +84,10 @@ export const WelcomeCard = styled.div`
 
   &:hover {
     transform: translateY(-5px);
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    width: 95%;
   }
 `;
