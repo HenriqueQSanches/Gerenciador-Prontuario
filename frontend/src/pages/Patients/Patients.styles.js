@@ -171,3 +171,75 @@ export const StyledTable = styled.table`
     }
   }
 `;
+
+export const SearchWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  margin: 15px 0;
+`;
+
+export const SearchInput = styled.input`
+  width: 100%;
+  padding: 12px 20px 12px 45px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.2);
+  }
+
+  &::placeholder {
+    color: #9e9e9e;
+  }
+`;
+
+export const SearchIcon = styled.div`
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9e9e9e;
+  pointer-events: none;
+`;
+
+export const AddPatientButton = styled.button`
+  background: linear-gradient(135deg, rgb(0, 87, 109) 0%, rgb(38, 110, 110) 100%);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 87, 109, 0.2);
+
+  svg {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    background: linear-gradient(135deg, rgb(38, 110, 110) 0%, rgb(0, 87, 109) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 87, 109, 0.3);
+
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 87, 109, 0.2);
+  }
+`;

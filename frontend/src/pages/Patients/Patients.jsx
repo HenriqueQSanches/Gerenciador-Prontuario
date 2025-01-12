@@ -7,10 +7,14 @@ import {
   ExpandableCard,
   CardTitle,
   TableContainer,
-  StyledTable
+  StyledTable,
+  SearchInput,
+  SearchWrapper,
+  SearchIcon,
+  AddPatientButton
 } from './Patients.styles';
 import Navbar from '../../components/Navbar';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaChevronDown, FaChevronUp, FaSearch, FaPlus } from 'react-icons/fa';
 
 const mockPatients = [
   { id: 1, name: 'Maria Silva', age: 35, phone: '(11) 98765-4321', lastVisit: '2023-10-15' },
@@ -21,10 +25,17 @@ const mockPatients = [
 
 const Patients = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
   };
+
+  const filteredPatients = mockPatients
+    .filter(patient =>
+      patient.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    .sort((a, b) => a.name.localeCompare(b.name)); // Adiciona ordenação alfabética
 
   return (
     <Container>
@@ -38,6 +49,24 @@ const Patients = () => {
               {isExpanded ? <FaChevronUp /> : <FaChevronDown />}
             </CardTitle>
             <TableContainer isExpanded={isExpanded}>
+              {isExpanded && (
+                <>
+                  <AddPatientButton onClick={(e) => e.stopPropagation()}>
+                    <FaPlus /> Adicionar Paciente
+                  </AddPatientButton>
+                  <SearchWrapper onClick={(e) => e.stopPropagation()}>
+                    <SearchIcon>
+                      <FaSearch />
+                    </SearchIcon>
+                    <SearchInput
+                      type="text"
+                      placeholder="Pesquisar paciente..."
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                  </SearchWrapper>
+                </>
+              )}
               <StyledTable>
                 <thead>
                   <tr>
@@ -48,7 +77,7 @@ const Patients = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {mockPatients.map(patient => (
+                  {filteredPatients.map(patient => (
                     <tr key={patient.id}>
                       <td>{patient.name}</td>
                       <td>{patient.age}</td>
