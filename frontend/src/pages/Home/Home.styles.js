@@ -1,62 +1,7 @@
 import styled from 'styled-components';
 
-export const NavContainer = styled.nav`
-  background-color: rgb(0, 87, 109);
-  padding: 1.2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-`;
-
-export const NavList = styled.ul`
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-  max-width: 1200px;
-  margin: 0 auto;
-  justify-content: space-between;
-`;
-
-export const NavItem = styled.li`
-  a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    position: relative;
-
-    &::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -2px;
-      left: 50%;
-      background-color: rgba(255, 255, 255, 0.8); 
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
-    }
-
-    &:hover {
-      color: #ffffff;
-      background-color: rgba(38, 110, 110, 0.2);
-      
-      &::after {
-        width: 80%;  
-      }
-    }
-  }
-`;
-
-export const NavGroup = styled.div`
-  display: flex;
-  gap: 2rem;
-`;
-
 export const MainContent = styled.main`
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  background: linear-gradient(135deg, rgb(0, 87, 109, 0.05) 0%, rgb(38, 110, 110, 0.1) 100%);
   min-height: 90vh;
   padding: 3rem;
   display: flex;
@@ -68,7 +13,7 @@ export const MainContent = styled.main`
 export const Title = styled.h1`
   color: rgb(0, 87, 109);
   margin-bottom: 2rem;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   text-align: center;
   position: relative;
   padding-bottom: 1rem;
@@ -86,9 +31,37 @@ export const Title = styled.h1`
   }
 `;
 
+export const Subtitle = styled.h2`
+  color: rgb(0, 87, 109, 0.8);
+  font-size: 1.5rem;
+  text-align: justify;
+  font-weight: 400;
+  max-width: 800px;
+  line-height: 1.8;
+  margin-top: 1rem;
+  padding: 0 1rem;
+  letter-spacing: 0.3px;
+`;
+
 export const Container = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: #f8f9fa;
+`;
+
+export const WelcomeCard = styled.div`
+  background: rgba(255, 255, 255, 0.95);
+  padding: 3rem 4rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 87, 109, 0.1);
+  max-width: 900px;
+  width: 90%;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 87, 109, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
 `;

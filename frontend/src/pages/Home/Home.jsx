@@ -1,42 +1,22 @@
-import { Link } from 'react-router-dom';
-import {
-  NavContainer,
-  NavList,
-  NavItem,
-  MainContent,
-  Title,
-  Container,
-  NavGroup
-} from './Home.styles';
-function Home() { 
+import React from 'react';
+import { Container, MainContent, Title, Subtitle, WelcomeCard } from './Home.styles';
+import Navbar from '../../components/Navbar';
+
+const Home = () => {
   return (
     <Container>
-      <NavContainer>
-        <NavList>
-          <NavGroup>
-            <NavItem>
-              <Link to="/">Página Inicial</Link>
-            </NavItem>
-            <NavItem>
-              <Link to="/pacientes">Pacientes</Link>
-            </NavItem>
-            <NavItem>
-              <Link to="/agenda">Agenda</Link>
-            </NavItem>
-          </NavGroup>
-          <NavGroup>
-            {/* <NavItem>
-              <Link to="/login">Login</Link>
-            </NavItem> */}
-          </NavGroup>
-        </NavList>
-      </NavContainer>
-      
+      <Navbar />
       <MainContent>
-        <Title>Gerenciador Inteligente de Prontuários</Title>
+        <WelcomeCard>
+          <Title>Gerenciador de Prontuários</Title>
+          <Subtitle>
+            Sistema completo para gestão de prontuários e acompanhamento clínico ou terapêutico, 
+            permitindo o gerenciamento eficiente de pacientes, sessões e documentação clínica
+          </Subtitle>
+        </WelcomeCard>
       </MainContent>
     </Container>
   );
-}
+};
 
 export default Home;
