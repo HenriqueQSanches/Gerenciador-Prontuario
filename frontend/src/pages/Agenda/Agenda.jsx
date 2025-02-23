@@ -9,6 +9,7 @@ import ptBrLocale from '@fullcalendar/core/locales/pt-br';
 import AgendamentoModal from './modals/SchedulingModal';
 import EventModal from './modals/EventModal';
 import ConfirmationModal from './modals/ConfirmationModal';
+import AgendamentosLista from './components/AgendaList';
 
 const Agenda = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -123,6 +124,7 @@ const Agenda = () => {
               }}
             />
           </CalendarWrapper>
+          <AgendamentosLista events={events} />
         </AgendaCard>
       </MainContent>
       <AgendamentoModal
