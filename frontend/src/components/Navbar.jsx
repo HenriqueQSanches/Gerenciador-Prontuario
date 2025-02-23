@@ -36,8 +36,8 @@ const Navbar = () => {
           <NavItem active={location.pathname === "/"}>
             <Link to="/" onClick={closeMenu}><AiFillHome /> Inicio</Link>
           </NavItem>
-          <NavItem active={location.pathname === "/pacientes"}>
-            <Link to="/pacientes" onClick={closeMenu}><FaHeartbeat /> Pacientes</Link>
+          <NavItem active={location.pathname === "/patients"}>
+            <Link to="/patients" onClick={closeMenu}><FaHeartbeat /> Pacientes</Link>
           </NavItem>
           <NavItem active={location.pathname === "/agenda"}>
             <Link to="/agenda" onClick={closeMenu}><BsFillCalendarCheckFill /> Agenda</Link>

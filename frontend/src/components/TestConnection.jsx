@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const TestConnection: React.FC = () => {
-    const [messages, setMessages] = useState<{[key: string]: string}>({
+const TestConnection = () => {
+    const [messages, setMessages] = useState({
         root: 'Testando raiz...',
         api: 'Testando API...',
         test: 'Testando conexão...'
