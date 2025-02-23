@@ -6,6 +6,7 @@ import { FaHeartbeat } from 'react-icons/fa';
 import { BsFillCalendarCheckFill } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
+import { FaMoneyBillWave } from 'react-icons/fa'; 
 
 const Navbar = () => {
   const location = useLocation();
@@ -41,6 +42,9 @@ const Navbar = () => {
           </NavItem>
           <NavItem active={location.pathname === "/agenda"}>
             <Link to="/agenda" onClick={closeMenu}><BsFillCalendarCheckFill /> Agenda</Link>
+          </NavItem>
+          <NavItem active={location.pathname === "/financial"}>
+            <Link to="/financial" onClick={closeMenu}><FaMoneyBillWave /> Financeiro</Link>
           </NavItem>
         </NavGroup>
         <NavGroup>
